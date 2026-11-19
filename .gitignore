@@ -1,6 +1,0 @@
-# Node.js
-node_modules/
-test-results/
-
-.idea/
-playwright-report/
