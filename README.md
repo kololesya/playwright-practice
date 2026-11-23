@@ -1,22 +1,22 @@
-# Playwright in Node.js Fundamentals — practice
+# Playwright in Node.js Fundamentals — Practice
 
-Личный репозиторий для практики по базовому курсу Playwright с Node.js. В нём собраны учебные примеры и тесты для локального демо-приложения Credit Association.
+This repository contains my practice work for the Playwright in Node.js Fundamentals course. The tests use the local Credit Association demo application included in this repository.
 
-## Что здесь изучается
+## What this repository covers
 
-- основы Playwright Test: тесты, фикстуры, assertions и async/await;
-- локаторы и фильтрация элементов;
-- навигация, заполнение форм, клики, чекбоксы, select и другие действия;
-- диалоги, события, cookies, browser storage, JavaScript в странице, загрузка файлов и скриншоты;
-- возможности test runner: группировка, хуки, параметры, параллельный запуск и аннотации;
-- конфигурация на уровне теста и группы;
-- HTTP-запросы, перехват и проверка сетевого трафика, совместное применение API и UI тестов.
+- Playwright Test basics: tests, fixtures, assertions, and async/await
+- Locators and locator filtering
+- Navigation, form filling, clicking, checkboxes, select controls, and other browser actions
+- Dialogs, events, cookies, browser storage, page JavaScript, file downloads and uploads, and screenshots
+- Test runner features: grouping, hooks, annotations, parameterization, and parallel execution
+- Test-level and group-level configuration
+- HTTP requests, network monitoring and interception, and combining API and UI testing
 
-Примеры сгруппированы по модулям в `tests/m3-core-concepts` — `tests/m9-networking`. Приложение находится в `src`, а `playwright.config.ts` задаёт адрес `http://localhost:3000`, браузерные проекты Chromium и Firefox и запуск локального сервера.
+Examples are organized by course module in `tests/m3-core-concepts` through `tests/m9-networking`. The demo app is in `src`. The Playwright configuration uses `http://localhost:3000`, runs Chromium and Firefox projects, and starts the local server for test runs.
 
-## Запуск
+## Run the tests
 
-Нужны Node.js и npm.
+You need Node.js and npm.
 
 ```bash
 npm ci
@@ -24,9 +24,9 @@ npx playwright install
 npx playwright test
 ```
 
-Playwright поднимет приложение командой `npm start` перед запуском тестов и остановит его после завершения. Чтобы посмотреть приложение отдельно, запусти `npm start` и открой [http://localhost:3000](http://localhost:3000).
+Playwright starts the demo app with `npm start` before the tests and stops it when the run is complete. To browse the app separately, run `npm start` and open [http://localhost:3000](http://localhost:3000).
 
-Полезные команды:
+Useful commands:
 
 ```bash
 npx playwright test --project=chromium
@@ -34,8 +34,8 @@ npx playwright test tests/m5-basic-actions
 npx playwright show-report
 ```
 
-## Набор тестов
+## Test suite
 
-Сейчас в репозитории **55 объявлений тестов**: **53 запускаются**, ещё **2 помечены как пропускаемые** в учебных примерах по аннотациям. В конфигурации включены Chromium и Firefox; setup-проект отдельно проверяет доступность локального приложения.
+The repository currently contains **55 declared tests**: **53 are active** and **2 are marked as skipped** in the test runner annotation examples. Chromium and Firefox are configured as browser projects; a separate setup project checks that the local app is available.
 
-GitHub Actions запускает установку зависимостей, браузеров и полный набор тестов при push и pull request в `main`.
+GitHub Actions installs the dependencies and browsers, then runs the suite on pushes and pull requests targeting `main`.
